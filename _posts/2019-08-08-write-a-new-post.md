@@ -1,404 +1,258 @@
 ---
-title: Writing a New Post
-author: cotes
-date: 2019-08-08 14:10:00 +0800
+title: Hello Peanuts
+author: doubleplusc
+date: 2023-05-21 02:09:00 +0800
 categories: [Blogging, Tutorial]
 tags: [writing]
 render_with_liquid: false
 ---
 
-This tutorial will guide you how to write a post in the _Chirpy_ template, and it's worth reading even if you've used Jekyll before, as many features require specific variables to be set.
-
-## Naming and Path
-
-Create a new file named `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} and put it in the `_posts`{: .filepath} of the root directory. Please note that the `EXTENSION`{: .filepath} must be one of `md`{: .filepath} and `markdown`{: .filepath}. If you want to save time of creating files, please consider using the plugin [`Jekyll-Compose`](https://github.com/jekyll/jekyll-compose) to accomplish this.
-
-## Front Matter
-
-Basically, you need to fill the [Front Matter](https://jekyllrb.com/docs/front-matter/) as below at the top of the post:
-
-```yaml
 ---
-title: TITLE
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
+__Advertisement :)__
+
+- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
+  resize in browser.
+- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
+  i18n with plurals support and easy syntax.
+
+You will like those projects!
+
 ---
+
+# h1 Heading 8-)
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+
+
+## Horizontal Rules
+
+___
+
+---
+
+***
+
+
+## Typographic replacements
+
+Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'
+
+
+## Emphasis
+
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+
+
+## Blockquotes
+
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Lists
+
+Unordered
+
++ Create a list by starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    * Ac tristique libero volutpat at
+    + Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
++ Very easy!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+
+
+1. You can use sequential numbers...
+1. ...or keep all the numbers as `1.`
+
+Start numbering with offset:
+
+57. foo
+1. bar
+
+
+## Code
+
+Inline `code`
+
+Indented code
+
+    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
+
+
+Block code "fences"
+
+```
+Sample text here...
 ```
 
-> The posts' _layout_ has been set to `post` by default, so there is no need to add the variable _layout_ in the Front Matter block.
-{: .prompt-tip }
+Syntax highlighting
 
-### Timezone of Date
+``` js
+var foo = function (bar) {
+  return bar++;
+};
 
-In order to accurately record the release date of a post, you should not only set up the `timezone` of `_config.yml`{: .filepath} but also provide the post's timezone in variable `date` of its Front Matter block. Format: `+/-TTTT`, e.g. `+0800`.
-
-### Categories and Tags
-
-The `categories` of each post are designed to contain up to two elements, and the number of elements in `tags` can be zero to infinity. For instance:
-
-```yaml
----
-categories: [Animal, Insect]
-tags: [bee]
----
+console.log(foo(5));
 ```
 
-### Author Information
+## Tables
 
-The author information of the post usually does not need to be filled in the _Front Matter_ , they will be obtained from variables `social.name` and the first entry of `social.links` of the configuration file by default. But you can also override it as follows:
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 
-Adding author information in `_data/authors.yml` (If your website doesn't have this file, don't hesitate to create one).
+Right aligned columns
 
-```yaml
-<author_id>:
-  name: <full name>
-  twitter: <twitter_of_author>
-  url: <homepage_of_author>
-```
-{: file="_data/authors.yml" }
-
-
-And then use `author` to specify a single entry or `authors` to specify multiple entries:
-
-```yaml
----
-author: <author_id>                     # for single entry
-# or
-authors: [<author1_id>, <author2_id>]   # for multiple entries
----
-```
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 
 
-Having said that, the key `author` can also identify multiple entries.
+## Links
 
-> The benefit of reading the author information from the file `_data/authors.yml`{: .filepath } is that the page will have the meta tag `twitter:creator`, which enriches the [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution) and is good for SEO.
-{: .prompt-info }
+[link text](http://dev.nodeca.com)
 
-## Table of Contents
+[link with title](http://nodeca.github.io/pica/demo/ "title text!")
 
-By default, the **T**able **o**f **C**ontents (TOC) is displayed on the right panel of the post. If you want to turn it off globally, go to `_config.yml`{: .filepath} and set the value of variable `toc` to `false`. If you want to turn off TOC for a specific post, add the following to the post's [Front Matter](https://jekyllrb.com/docs/front-matter/):
+Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
-```yaml
----
-toc: false
----
-```
-
-## Comments
-
-The global switch of comments is defined by variable `comments.active` in the file `_config.yml`{: .filepath}. After selecting a comment system for this variable, comments will be turned on for all posts.
-
-If you want to close the comment for a specific post, add the following to the **Front Matter** of the post:
-
-```yaml
----
-comments: false
----
-```
-
-## Mathematics
-
-For website performance reasons, the mathematical feature won't be loaded by default. But it can be enabled by:
-
-```yaml
----
-math: true
----
-```
-
-## Mermaid
-
-[**Mermaid**](https://github.com/mermaid-js/mermaid) is a great diagrams generation tool. To enable it on your post, add the following to the YAML block:
-
-```yaml
----
-mermaid: true
----
-```
-
-Then you can use it like other markdown languages: surround the graph code with ```` ```mermaid ```` and ```` ``` ````.
 
 ## Images
 
-### Caption
+![Minion](https://octodex.github.com/images/minion.png)
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
-Add italics to the next line of an image，then it will become the caption and appear at the bottom of the image:
+Like links, Images also have a footnote style syntax
 
-```markdown
-![img-description](/path/to/image)
-_Image Caption_
-```
-{: .nolineno}
+![Alt text][id]
 
-### Size
+With a reference later in the document defining the URL location:
 
-In order to prevent the page content layout from shifting when the image is loaded, we should set the width and height for each image.
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 
-```markdown
-![Desktop View](/assets/img/sample/mockup.png){: width="700" height="400" }
-```
-{: .nolineno}
 
-> For an SVG, you have to at least specify its _width_, otherwise it won't be rendered.
-{: .prompt-info }
+## Plugins
 
-Starting from _Chirpy v5.0.0_, `height` and `width` support abbreviations (`height` → `h`, `width` → `w`). The following example has the same effect as the above:
+The killer feature of `markdown-it` is very effective support of
+[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
 
-```markdown
-![Desktop View](/assets/img/sample/mockup.png){: w="700" h="400" }
-```
-{: .nolineno}
 
-### Position
+### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
 
-By default, the image is centered, but you can specify the position by using one of the classes `normal`, `left`, and `right`.
+> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+>
+> Shortcuts (emoticons): :-) :-( 8-) ;)
 
-> Once the position is specified, the image caption should not be added.
-{: .prompt-warning }
+see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
 
-- **Normal position**
 
-  Image will be left aligned in below sample:
+### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
-  ```markdown
-  ![Desktop View](/assets/img/sample/mockup.png){: .normal }
-  ```
-  {: .nolineno}
+- 19^th^
+- H~2~O
 
-- **Float to the left**
 
-  ```markdown
-  ![Desktop View](/assets/img/sample/mockup.png){: .left }
-  ```
-  {: .nolineno}
+### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
 
-- **Float to the right**
+++Inserted text++
 
-  ```markdown
-  ![Desktop View](/assets/img/sample/mockup.png){: .right }
-  ```
-  {: .nolineno}
 
-### Dark/Light mode
+### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
 
-You can make images follow theme preferences in dark/light mode. This requires you to prepare two images, one for dark mode and one for light mode, and then assign them a specific class (`dark` or `light`):
+==Marked text==
 
-```markdown
-![Light mode only](/path/to/light-mode.png){: .light }
-![Dark mode only](/path/to/dark-mode.png){: .dark }
-```
 
-### Shadow
+### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
 
-The screenshots of the program window can be considered to show the shadow effect:
+Footnote 1 link[^first].
 
-```markdown
-![Desktop View](/assets/img/sample/mockup.png){: .shadow }
-```
-{: .nolineno}
+Footnote 2 link[^second].
 
-### CDN URL
+Inline footnote^[Text of inline footnote] definition.
 
-If you host the images on the CDN, you can save the time of repeatedly writing the CDN URL by assigning the variable `img_cdn` of `_config.yml`{: .filepath} file:
+Duplicated footnote reference[^second].
 
-```yaml
-img_cdn: https://cdn.com
-```
-{: file='_config.yml' .nolineno}
+[^first]: Footnote **can have markup**
 
-Once `img_cdn` is assigned, the CDN URL will be added to the path of all images (images of site avatar and posts) starting with `/`.
+    and multiple paragraphs.
 
-For instance, when using images:
+[^second]: Footnote text.
 
-```markdown
-![The flower](/path/to/flower.png)
-```
-{: .nolineno}
 
-The parsing result will automatically add the CDN prefix `https://cdn.com` before the image path:
+### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
 
-```html
-<img src="https://cdn.com/path/to/flower.png" alt="The flower">
-```
-{: .nolineno }
+Term 1
 
-### Image Path
+:   Definition 1
+with lazy continuation.
 
-When a post contains many images, it will be a time-consuming task to repeatedly define the path of the images. To solve this, we can define this path in the YAML block of the post:
+Term 2 with *inline markup*
 
-```yml
----
-img_path: /img/path/
----
-```
+:   Definition 2
 
-And then, the image source of Markdown can write the file name directly:
+        { some code, part of Definition 2 }
 
-```md
-![The flower](flower.png)
-```
-{: .nolineno }
+    Third paragraph of definition 2.
 
-The output will be:
+_Compact style:_
 
-```html
-<img src="/img/path/flower.png" alt="The flower">
-```
-{: .nolineno }
+Term 1
+  ~ Definition 1
 
-### Preview Image
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
 
-If you want to add an image at the top of the post, please provide an image with a resolution of `1200 x 630`. Please note that if the image aspect ratio does not meet `1.91 : 1`, the image will be scaled and cropped.
 
-Knowing these prerequisites, you can start setting the image's attribute:
+### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
 
-```yaml
----
-image:
-  path: /path/to/image
-  alt: image alternative text
----
-```
+This is HTML abbreviation example.
 
-Note that the [`img_path`](#image-path) can also be passed to the preview image, that is, when it has been set, the  attribute `path` only needs the image file name.
+It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
-For simple use, you can also just use `image` to define the path.
+*[HTML]: Hyper Text Markup Language
 
-```yml
----
-image: /path/to/image
----
-```
+### [Custom containers](https://github.com/markdown-it/markdown-it-container)
 
-### LQIP
+::: warning
+*here be dragons*
+:::
 
-For preview images:
-
-```yaml
----
-image:
-  lqip: /path/to/lqip-file # or base64 URI
----
-```
-
-> You can observe LQIP in the preview image of post [_Text and Typography_](/posts/text-and-typography/).
-
-
-For normal images:
-
-```markdown
-![Image description](/path/to/image){: lqip="/path/to/lqip-file" }
-```
-{: .nolineno }
-
-## Pinned Posts
-
-You can pin one or more posts to the top of the home page, and the fixed posts are sorted in reverse order according to their release date. Enable by:
-
-```yaml
----
-pin: true
----
-```
-
-## Prompts
-
-There are several types of prompts: `tip`, `info`, `warning`, and `danger`. They can be generated by adding the class `prompt-{type}` to the blockquote. For example, define a prompt of type `info` as follows:
-
-```md
-> Example line for prompt.
-{: .prompt-info }
-```
-{: .nolineno }
-
-## Syntax
-
-### Inline Code
-
-```md
-`inline code part`
-```
-{: .nolineno }
-
-### Filepath Hightlight
-
-```md
-`/path/to/a/file.extend`{: .filepath}
-```
-{: .nolineno }
-
-### Code Block
-
-Markdown symbols ```` ``` ```` can easily create a code block as follows:
-
-````md
-```
-This is a plaintext code snippet.
-```
-````
-
-#### Specifying Language
-
-Using ```` ```{language} ```` you will get a code block with syntax highlight:
-
-````markdown
-```yaml
-key: value
-```
-````
-
-> The Jekyll tag `{% highlight %}` is not compatible with this theme.
-{: .prompt-danger }
-
-#### Line Number
-
-By default, all languages except `plaintext`, `console`, and `terminal` will display line numbers. When you want to hide the line number of a code block, add the class `nolineno` to it:
-
-````markdown
-```shell
-echo 'No more line numbers!'
-```
-{: .nolineno }
-````
-
-#### Specifying the Filename
-
-You may have noticed that the code language will be displayed at the top of the code block. If you want to replace it with the file name, you can add the attribute `file` to achieve this:
-
-````markdown
-```shell
-# content
-```
-{: file="path/to/file" }
-````
-
-#### Liquid Codes
-
-If you want to display the **Liquid** snippet, surround the liquid code with `{% raw %}` and `{% endraw %}`:
-
-````markdown
-{% raw %}
-```liquid
-{% if product.title contains 'Pack' %}
-  This product's title contains the word Pack.
-{% endif %}
-```
-{% endraw %}
-````
-
-Or adding `render_with_liquid: false` (Requires Jekyll 4.0 or higher) to the post's YAML block.
-
-## Videos
-
-You can embed a video with the following syntax:
-
-```liquid
-{% include embed/{Platform}.html id='{ID}' %}
-```
-Where `Platform` is the lowercase of the platform name, and `ID` is the video ID.
-
-The following table shows how to get the two parameters we need in a given video URL, and you can also know the currently supported video platforms.
 
 | Video URL                                                                                          | Platform  | ID            |
 |----------------------------------------------------------------------------------------------------|-----------|:--------------|
